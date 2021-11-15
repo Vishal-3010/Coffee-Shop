@@ -1,0 +1,78 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} About Us - Coffee Shop{% endblock %}
+
+{% block body %}
+
+  {% load static %}
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'shop/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'shop/assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'shop/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'shop/assets/css/style.css' %}" rel="stylesheet">
+
+
+
+    
+
+   <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h3>Welcome to <strong>The Coffee Shop</strong></h3>
+            <p class="font-italic">
+              The Coffee Shop is based on a concept to maintain orders and management of a particular coffee shop. 
+              There are  sections in this project, they are Coffee,Drinks & Pizza Ordering. By using this system he/she can maintain 
+              ordering records of a day. By selecting Coffe ,Drinks, and Pizza Order the system displays a list of Available coffee 
+              drinks and the user has to place an order with item quantity. After that, he/she proceeds towards Order confirmation 
+              and Payment methods. In this coffee shop only cash are acceptable , online payment is not available.
+            </p>
+          </div>
+         
+    </section><!-- End About Us Section -->
+
+    
+
+{% endblock %}
+
+{% block js %}
+<script>
+
+$('#popcart').popover();
+updatePopover(cart);
+
+function updatePopover(cart) {
+    var popStr = "";
+    popStr = popStr + "<h5> Click <a href='/shop/checkout'><button class='btn btn-primary'>Here</button></a> to order </h5><div class='mx-2 my-2'>";
+    document.getElementById("popcart").setAttribute('data-content', popStr);
+    $('#popcart').popover();
+}
+
+</script>
+
+{% load static %}
+  <!-- Vendor JS Files -->
+  <script src="{% static 'shop/assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'shop/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'shop/assets/vendor/jquery-sticky/jquery.sticky.js' %}"></script>
+  <script src="{% static 'shop/assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'shop/assets/vendor/counterup/counterup.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'shop/assets/js/main.js' %}"></script>
+
+
+{% endblock %}
